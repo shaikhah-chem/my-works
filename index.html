@@ -1,0 +1,346 @@
+<!-- test -->
+سطر<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أعمالي الرقمية | أ. شيخه المطيري</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --card:#ffffff; --ink:#1d2433; --muted:#5f6878; --line:#e6e1d6;
+  --teal:#0f5c63; --teal-2:#137a82; --teal-soft:#e3f0ef; --gold:#c8922c; --gold-soft:#f8eedb;
+  --shadow:0 1px 2px rgba(20,30,40,.06),0 8px 24px rgba(20,30,40,.06);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Cairo",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;min-height:100vh}
+a{color:inherit}
+
+/* Hero */
+.hero{background:linear-gradient(135deg,#0c4a50 0%,#0f5c63 55%,#16737a 100%);color:#fff;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 12% 30%,rgba(255,255,255,.08) 0 2px,transparent 3px) 0 0/38px 38px;opacity:.6;pointer-events:none}
+.hero-in{max-width:1120px;margin:auto;padding:48px 22px 86px;position:relative;z-index:1}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:4px 14px;border-radius:99px;font-size:.85rem}
+.hero h1{font-size:clamp(1.8rem,4.4vw,2.8rem);font-weight:800;margin:14px 0 6px;line-height:1.3}
+.hero h1 span{color:#f3c56b}
+.hero p{max-width:640px;opacity:.9;font-size:1.02rem}
+.hero .school{margin-top:10px;font-size:.9rem;opacity:.75}
+.hero-actions{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.btn{font-family:inherit;font-weight:700;font-size:.95rem;border:0;border-radius:12px;padding:10px 18px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none;transition:transform .15s,box-shadow .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:#f3c56b;color:#3b2a06}
+.btn-gold:hover{background:#f6d185}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25)}
+.btn-ghost:hover{background:rgba(255,255,255,.2)}
+
+/* Stats */
+.wrap{max-width:1120px;margin:auto;padding:0 22px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-52px;position:relative;z-index:2}
+.stat{background:var(--card);border-radius:16px;padding:16px 18px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.stat b{display:block;font-size:1.9rem;font-weight:800;color:var(--teal);line-height:1.1}
+.stat small{color:var(--muted);font-size:.88rem}
+
+/* Toolbar */
+.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:30px 0 18px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;flex:1}
+.tab{font-family:inherit;font-size:.92rem;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:7px 14px;border-radius:99px;cursor:pointer;transition:.15s}
+.tab:hover{border-color:var(--teal-2)}
+.tab.on{background:var(--teal);border-color:var(--teal);color:#fff}
+.tab .n{font-size:.78rem;opacity:.7;margin-inline-start:4px}
+.search{position:relative;min-width:240px}
+.search input{width:100%;font-family:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:9px 38px 9px 14px;outline:none}
+.search input:focus{border-color:var(--teal-2);box-shadow:0 0 0 3px var(--teal-soft)}
+.search svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+
+/* Sections & cards */
+.section{margin:26px 0 8px}
+.section h2{font-size:1.25rem;font-weight:800;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.section h2 .ico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--teal-soft);font-size:1.15rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 2px 4px rgba(20,30,40,.06),0 14px 32px rgba(20,30,40,.1)}
+.card-top{display:flex;gap:12px;align-items:flex-start}
+.emoji{flex:none;width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;background:var(--gold-soft)}
+.card h3{font-size:1.06rem;font-weight:800;line-height:1.45}
+.course{font-size:.8rem;color:var(--teal);font-weight:700}
+.card p{color:var(--muted);font-size:.92rem;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.76rem;background:#f1efe9;color:#4b5363;padding:2px 10px;border-radius:99px}
+.card-foot{display:flex;gap:8px;align-items:center;margin-top:4px}
+.open{background:var(--teal);color:#fff;flex:1;justify-content:center}
+.open:hover{background:var(--teal-2)}
+.qr-btn{background:var(--teal-soft);color:var(--teal);padding:10px 12px}
+.qr-btn:hover{background:#d3e8e6}
+.soon{flex:1;justify-content:center;background:#f1efe9;color:#8a8f99;cursor:default;font-weight:600}
+.empty{text-align:center;color:var(--muted);padding:40px 0;display:none}
+
+/* Modal */
+.modal{position:fixed;inset:0;background:rgba(12,24,30,.55);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:20px;padding:24px;max-width:340px;width:100%;text-align:center;position:relative}
+.modal-box h4{font-size:1.05rem;font-weight:800;margin-bottom:4px}
+.modal-box .url{font-size:.78rem;color:var(--muted);word-break:break-all;direction:ltr;margin:8px 0 14px}
+#qrcode{display:flex;justify-content:center;margin:12px 0}
+#qrcode img,#qrcode canvas{width:220px!important;height:220px!important}
+.x{position:absolute;top:10px;left:12px;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--muted)}
+.modal-actions{display:flex;gap:8px;justify-content:center}
+.btn-sm{font-size:.85rem;padding:8px 14px;background:var(--teal);color:#fff}
+.btn-sm.alt{background:var(--teal-soft);color:var(--teal)}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:8px 18px;border-radius:10px;font-size:.9rem;opacity:0;transition:.25s;pointer-events:none;z-index:60}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.journey-pill{display:inline-flex;align-items:center;gap:10px;margin-top:14px;background:rgba(243,197,107,.16);border:1px solid rgba(243,197,107,.45);color:#fbe3b0;padding:6px 16px;border-radius:99px;font-size:.92rem;font-weight:700}
+.journey-pill .dot{width:9px;height:9px;border-radius:50%;background:#f3c56b;box-shadow:0 0 0 0 rgba(243,197,107,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(243,197,107,.7)}70%{box-shadow:0 0 0 10px rgba(243,197,107,0)}100%{box-shadow:0 0 0 0 rgba(243,197,107,0)}}
+.journey{margin:40px 0 10px;display:flex;gap:18px;align-items:flex-start;background:linear-gradient(135deg,var(--gold-soft),#fff);border:1px dashed var(--gold);border-radius:20px;padding:22px 24px}
+.journey .j-icon{flex:none;width:56px;height:56px;border-radius:16px;background:#fff;display:grid;place-items:center;font-size:1.8rem;box-shadow:var(--shadow)}
+.journey h2{font-size:1.2rem;font-weight:800;color:#7a5410;margin-bottom:4px}
+.journey p{color:#5b4a2a;font-size:.98rem}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:40px 20px 30px}
+
+@media (max-width:760px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .search{min-width:100%}
+  .hero-in{padding:36px 18px 80px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-in">
+    <span class="kicker">⚗️ معرض الأعمال الرقمية</span>
+    <h1>أعمالي في <span>تعليم الكيمياء والعلوم</span></h1>
+    <p>ألعاب ومختبرات افتراضية وتجارب واقع معزز ومنصات تفاعلية صممتها لطالباتي، لتكون الحصة أمتع والتعلم أعمق.</p>
+    <div class="journey-pill"><span class="dot"></span> ما زلتُ في رحلة بناء المنصات التعليمية… والقائمة تكبر</div>
+    <div class="school">أ. شيخه المطيري — الثانوية الثانية والثلاثون — إدارة تعليم القصيم</div>
+    <div class="hero-actions">
+      <button class="btn btn-gold" id="pageQr">▦ رمز QR لهذه الصفحة</button>
+      <a class="btn btn-ghost" href="#all" id="jump">تصفّحي الأعمال ↓</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap" id="all">
+  <div class="stats" id="stats"></div>
+
+  <div class="toolbar">
+    <div class="tabs" id="tabs"></div>
+    <label class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="ابحثي عن عمل أو مقرر…">
+    </label>
+  </div>
+
+  <div id="list"></div>
+  <div class="empty" id="empty">لا توجد نتائج مطابقة.</div>
+
+  <section class="journey">
+    <div class="j-icon">🚀</div>
+    <div>
+      <h2>الرحلة مستمرة</h2>
+      <p>هذه الأعمال ليست محطة أخيرة؛ ما زلتُ في رحلة بناء المنصات التعليمية وتطويرها. أعمل على تحسين المنصات الحالية وربطها ببعضها، وأضيف أدوات جديدة كلما احتاجتها طالباتي في الحصة، وتُضاف هنا أولًا بأول.</p>
+    </div>
+  </section>
+</main>
+
+<footer>تنفيذ المعلمة: أ. شيخه المطيري · 1448 هـ</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="x" id="close" aria-label="إغلاق">×</button>
+    <h4 id="mTitle"></h4>
+    <div id="qrcode"></div>
+    <div class="url" id="mUrl"></div>
+    <div class="modal-actions">
+      <button class="btn btn-sm" id="copy">نسخ الرابط</button>
+      <button class="btn btn-sm alt" id="close2">إغلاق</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* =========================================================
+   ✏️ لتعديل الأعمال: عدّلي هذه القائمة فقط.
+   - link: ضعي الرابط بين علامتي التنصيص. إذا تركتِه فارغًا "" يظهر زر «الرابط قريبًا».
+   - cat: games | labs | ar | sites | media
+   ========================================================= */
+const CATS = {
+  platforms: {name:"المنصات التعليمية", icon:"🧭"},
+  games: {name:"الألعاب والتحديات", icon:"🎮"},
+  labs:  {name:"المختبرات والمحاكاة", icon:"🧪"},
+  ar:    {name:"الواقع المعزز", icon:"🥽"},
+  sites: {name:"مواقع وأدوات صفية", icon:"🌐"}
+};
+
+const WORKS = [
+  {cat:"platforms", emoji:"⚗️", title:"الكيمياء البسيطة", course:"كيمياء 1",
+   desc:"منصة دروس واختبارات ناطقة لخمسة فصول و17 درسًا، فيها أربع ألعاب (من سيربح المليون، الكنز المفقود، روليت الأسئلة، المطابقة) وشهادة إنجاز للطباعة.",
+   tags:["ألعاب","تغذية راجعة صوتية","شهادات"], link:"https://shaikhah-chem.github.io/alkeemiya-albasita/"},
+  {cat:"platforms", emoji:"🔬", title:"منصة التجارب العملية", course:"كيمياء 1 · 2-1 · 2-2 · 3",
+   desc:"لكل تجربة: فيديو توضيحي، وتقارير، ومصادر وخرائط، ومهام أدائية ترفع فيها الطالبة تقريرها بأي صيغة.",
+   tags:["مهام أدائية","رفع ملفات","فيديو"], link:"https://shaikhah-chem.github.io/tajarib-amaliya/"},
+  {cat:"platforms", emoji:"📝", title:"ورقة عمل ذكية", course:"جميع مقررات الكيمياء",
+   desc:"منصة لإنشاء أوراق عمل تفاعلية تحلها الطالبة برابط باسمها فقط، مع تصحيح آلي وتغذية راجعة ولوحة متصدرين وتقرير لمستويات الطالبات.",
+   tags:["تصحيح آلي","بنك أسئلة"], link:"https://storied-starlight-259069.netlify.app/"},
+  {cat:"platforms", emoji:"🏅", title:"رصيدي الذهبي", course:"تحفيز الطالبات",
+   desc:"نظام النقاط الذهبية: «كل مبادرة… تصنع فرقًا». مستويات ومتجر مكافآت ومتابعة لمهام الصف المقلوب، يُعرض على السبورة ويعمل على الآيباد.",
+   tags:["تحفيز","صف مقلوب","يعمل دون إنترنت"], link:"https://shaikhah-chem.github.io/raseedi-app/"},
+
+  {cat:"games", emoji:"⚛️", title:"رحلة إلى قلب الذرة", course:"كيمياء 1 · تعريف الذرة",
+   desc:"لعبة لحساب جسيمات الذرة: البروتونات والنيوترونات والإلكترونات.",
+   tags:["لعبة","تقويم"], link:"https://shaikhah-chem.github.io/atom-particles/"},
+  {cat:"games", emoji:"⚖️", title:"ميزان المعادلات الكيميائية", course:"كيمياء 1 · التفاعلات والمعادلات",
+   desc:"لعبة لوزن 14 معادلة بتغيير المعاملات على ميزان متحرك، تدخل الطالبة باسمها وشعبتها ويُحفظ إنجازها في لوحة المتصدرات.",
+   tags:["لعبة","لوحة متصدرات","قانون حفظ الكتلة"], link:"https://mizan-shaikha.netlify.app/"},
+  {cat:"games", emoji:"🎡", title:"عجلة التقويم البنائي: التعادل", course:"كيمياء 3 · التعادل",
+   desc:"عجلة أسئلة بنمط التحصيلي تُدار على السبورة، وتتنافس المجموعات على الإجابة.",
+   tags:["تقويم بنائي","تحصيلي","مجموعات"], link:"https://shaikhah-chem.github.io/neutral-live/formative-wheel-offline.html"},
+  {cat:"games", emoji:"🧪", title:"التقويم الختامي التفاعلي: التعادل", course:"كيمياء 3 · التعادل",
+   desc:"أربعة أسئلة بنمط التحصيلي: نواتج التعادل، المعادلة الأيونية، قراءة رسم بياني، والملح الناتج، وأسرع مجموعة تفوز.",
+   tags:["تقويم ختامي","تحصيلي","مجموعات"], link:"https://shaikhah-chem.github.io/neutral-live/final-quiz-offline.html"},
+  {cat:"games", emoji:"🏆", title:"تحدّي التحصيلي – الكيمياء", course:"مراجعة التحصيلي",
+   desc:"تحدٍّ تفاعلي لمراجعة أسئلة الكيمياء في اختبار التحصيلي.",
+   tags:["تحصيلي","مراجعة"], link:"https://shaikhah-chem.github.io/tahsili/"},
+  {cat:"games", emoji:"🍄", title:"التقويم الختامي: مدخل إلى الفطريات", course:"أحياء · الفطريات",
+   desc:"تقويم ختامي تفاعلي لدرس الفطريات.",
+   tags:["تقويم ختامي"], link:"https://shaikhah-chem.github.io/fungi-quiz/"},
+
+  {cat:"labs", emoji:"🧫", title:"مختبر العناصر والمركبات", course:"كيمياء 1 · العناصر والمركبات",
+   desc:"«مهمة الباحثات الكيميائيات»: أنشطة تفاعلية لدرس العناصر والمركبات.",
+   tags:["أنشطة تفاعلية","زيارة صفية"], link:"https://shaikhah-chem.github.io/elements-compounds-lab/"},
+  {cat:"labs", emoji:"🔥", title:"التفاعلات والمعادلات: أنشطة الدرس", course:"كيمياء 1 · 4-1",
+   desc:"أنشطة تفاعلية لدرس التفاعلات والمعادلات الكيميائية.",
+   tags:["أنشطة تفاعلية"], link:"https://shaikhah-chem.github.io/reactions-equations-lab/"},
+  {cat:"labs", emoji:"🧂", title:"مختبر المركبات الأيونية", course:"كيمياء 2-1 · صيغ المركبات الأيونية وأسماؤها",
+   desc:"نشاط تفاعلي لبناء صيغ المركبات الأيونية وتسميتها، تُحفظ فيه نتائج الطالبات تلقائيًا للمعلمة.",
+   tags:["حفظ النتائج","تقويم تكويني"], link:"https://ionic-lab-shaikha.netlify.app/"},
+  {cat:"labs", emoji:"🧪", title:"تسمية الجزيئات", course:"كيمياء 2-1 · تسمية الجزيئات",
+   desc:"نماذج جزيئات ثلاثية الأبعاد مع تقويم ختامي.",
+   tags:["3D","تقويم ختامي"], link:"https://shaikhah-chem.github.io/naming-molecules/"},
+  {cat:"labs", emoji:"💧", title:"صيغ الأملاح المائية", course:"كيمياء 2-1 · الأملاح المائية",
+   desc:"مختبر واقع معزز وأنشطة تفاعلية مع تقويم ختامي.",
+   tags:["واقع معزز","تقويم ختامي"], link:"https://shaikhah-chem.github.io/hydrates-lab/"},
+  {cat:"labs", emoji:"⚡", title:"مختبر الأكسدة والاختزال", course:"كيمياء 3 · الأكسدة والاختزال",
+   desc:"مختبر تفاعلي لدرس تفاعلات الأكسدة والاختزال.",
+   tags:["مختبر تفاعلي"], link:"https://shaikhah-chem.github.io/redox-lab/"},
+  {cat:"labs", emoji:"🔋", title:"محاكاة الخلية الجلفانية", course:"كيمياء 3 · الخلايا الجلفانية",
+   desc:"محاكاة تفاعلية لخلية دانيال: حركة الإلكترونات والأيونات، القنطرة الملحية، وقراءة الفولتميتر.",
+   tags:["محاكاة","كهروكيمياء"], link:"https://shaikhah-chem.github.io/galvanic-cell/"},
+
+  {cat:"ar", emoji:"🧩", title:"العناصر والمركبات بالواقع المعزز", course:"كيمياء 1 · العناصر والمركبات",
+   desc:"تجربة واقع معزز لاستكشاف العناصر والمركبات.",
+   tags:["WebAR"], link:"https://shaikhah-chem.github.io/elements-compounds-ar/"},
+  {cat:"ar", emoji:"🧊", title:"الواقع المعزز: صيغ المركبات الأيونية", course:"كيمياء 2-1",
+   desc:"تصوّر الطالبة البطاقة المطبوعة بالكاميرا فتظهر الأيونات ثلاثية الأبعاد فوقها، مع سؤال توازن الشحنات.",
+   tags:["WebAR","بطاقات مطبوعة"], link:"https://shaikhah-chem.github.io/ar-ionic/"},
+  {cat:"ar", emoji:"🌀", title:"النماذج الذرية بالواقع المعزز", course:"علوم أول متوسط · تركيب المادة",
+   desc:"مختبر النماذج الذرية: استعراض تطور نماذج الذرة بالواقع المعزز.",
+   tags:["WebAR","3D"], link:"https://shaikhah-chem.github.io/atom-models-ar/"},
+  {cat:"ar", emoji:"🦠", title:"مستكشف الطلائعيات", course:"أحياء · مدخل إلى الطلائعيات",
+   desc:"نموذج ثلاثي الأبعاد للبراميسيوم واليوغلينا: منظر خارجي، ثم «شاهد من الداخل» مع أسماء التراكيب.",
+   tags:["3D","WebAR"], link:"https://shaikhah-chem.github.io/protists-4d-explorer/"},
+  {cat:"ar", emoji:"🍄", title:"الفطر بين يديكِ", course:"أحياء · مدخل إلى الفطريات",
+   desc:"تجربة واقع معزز لاستكشاف تركيب الفطر.",
+   tags:["WebAR"], link:"https://shaikhah-chem.github.io/fungi-ar/"},
+  {cat:"ar", emoji:"🐾", title:"مختبر أجسام الحيوانات", course:"أحياء · مستويات بناء جسم الحيوان",
+   desc:"تجربة واقع معزز لمستويات بناء جسم الحيوان.",
+   tags:["WebAR"], link:"https://shaikhah-chem.github.io/animal-body-ar/"},
+
+  {cat:"sites", emoji:"🤝", title:"معاهدة صفّي الجميل", course:"أول ثانوي · ثاني ثانوي",
+   desc:"ميثاق صفي تفاعلي توقّع عليه الطالبات إلكترونيًا، وتُحفظ التوقيعات في جدول.",
+   tags:["قيم صفية","توقيع إلكتروني"], link:"https://shaikhah-chem.github.io/shaikhah-chem-class-pledge/"},
+  {cat:"sites", emoji:"💡", title:"بنك أوامر قسم العلوم", course:"مجتمع التعلم المهني",
+   desc:"بنك أوامر جاهزة للذكاء الاصطناعي لمعلمات العلوم، من مخرجات لقاءات مجتمع التعلم المهني.",
+   tags:["ذكاء اصطناعي","هندسة الأوامر"], link:"https://shaikhah-chem.github.io/prompt-bank/"},
+  {cat:"sites", emoji:"📊", title:"سجل متابعة الدرجات", course:"إدارة الصف",
+   desc:"سجل لمتابعة درجات الطالبات بهوية وزارة التعليم.",
+   tags:["درجات","متابعة"], link:"https://shaikhah-chem.github.io/smart-followup-ad/"}
+];
+
+/* ================= لا حاجة لتعديل ما بعد هذا السطر ================= */
+const $ = s => document.querySelector(s);
+let current = "all", query = "";
+
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function renderStats(){
+  const live = WORKS.filter(w=>w.link).length;
+  const ar = WORKS.filter(w=>w.cat==="ar").length;
+  const labs = WORKS.filter(w=>w.cat==="labs").length;
+  $("#stats").innerHTML = `
+    <div class="stat"><b>${WORKS.length}</b><small>عملًا رقميًا</small></div>
+    <div class="stat"><b>${live}</b><small>متاح برابط مباشر</small></div>
+    <div class="stat"><b>${labs}</b><small>مختبرات ومحاكاة</small></div>
+    <div class="stat"><b>${ar}</b><small>تجارب واقع معزز</small></div>`;
+}
+
+function renderTabs(){
+  const counts = {}; WORKS.forEach(w=>counts[w.cat]=(counts[w.cat]||0)+1);
+  let h = `<button class="tab ${current==="all"?"on":""}" data-c="all">الكل<span class="n">${WORKS.length}</span></button>`;
+  for(const k in CATS) if(counts[k]) h += `<button class="tab ${current===k?"on":""}" data-c="${k}">${CATS[k].icon} ${CATS[k].name}<span class="n">${counts[k]}</span></button>`;
+  $("#tabs").innerHTML = h;
+  document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{current=b.dataset.c;renderTabs();renderList();});
+}
+
+function card(w,i){
+  const tags = (w.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join("");
+  const foot = w.link
+    ? `<a class="btn open" href="${esc(w.link)}" target="_blank" rel="noopener">فتح العمل ↗</a>
+       <button class="btn qr-btn" data-i="${i}" title="رمز QR">▦</button>`
+    : `<span class="btn soon">الرابط قريبًا</span>`;
+  return `<article class="card">
+    <div class="card-top"><div class="emoji">${w.emoji}</div>
+      <div><h3>${esc(w.title)}</h3><div class="course">${esc(w.course)}</div></div></div>
+    <p>${esc(w.desc)}</p>
+    <div class="tags">${tags}</div>
+    <div class="card-foot">${foot}</div>
+  </article>`;
+}
+
+function renderList(){
+  const q = query.trim();
+  const match = w => (current==="all"||w.cat===current) &&
+    (!q || [w.title,w.course,w.desc,...(w.tags||[])].join(" ").includes(q));
+  let html = "", total = 0;
+  for(const k in CATS){
+    const items = WORKS.map((w,i)=>[w,i]).filter(([w])=>w.cat===k && match(w));
+    if(!items.length) continue;
+    total += items.length;
+    html += `<section class="section"><h2><span class="ico">${CATS[k].icon}</span>${CATS[k].name}</h2>
+      <div class="grid">${items.map(([w,i])=>card(w,i)).join("")}</div></section>`;
+  }
+  $("#list").innerHTML = html;
+  $("#empty").style.display = total ? "none" : "block";
+  document.querySelectorAll(".qr-btn").forEach(b=>b.onclick=()=>{const w=WORKS[b.dataset.i];openQR(w.title,w.link);});
+}
+
+let qrUrl = "";
+function openQR(title,url){
+  qrUrl = url;
+  $("#mTitle").textContent = title;
+  $("#mUrl").textContent = url;
+  const box = $("#qrcode"); box.innerHTML = "";
+  if(window.QRCode){ new QRCode(box,{text:url,width:440,height:440,colorDark:"#0f5c63",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M}); }
+  else box.textContent = "تعذّر إنشاء الرمز (تحتاج الصفحة اتصالًا بالإنترنت).";
+  $("#modal").classList.add("show");
+}
+function closeQR(){$("#modal").classList.remove("show")}
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("show");setTimeout(()=>e.classList.remove("show"),1800)}
+
+$("#close").onclick = closeQR; $("#close2").onclick = closeQR;
+$("#modal").onclick = e=>{ if(e.target.id==="modal") closeQR(); };
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeQR(); });
+$("#copy").onclick = async ()=>{ try{ await navigator.clipboard.writeText(qrUrl); toast("تم نسخ الرابط ✓"); }catch(e){ toast("انسخي الرابط الظاهر يدويًا"); } };
+$("#pageQr").onclick = ()=>openQR("صفحة أعمالي", location.href.split("#")[0]);
+$("#q").addEventListener("input",e=>{query=e.target.value;renderList();});
+
+renderStats(); renderTabs(); renderList();
+</script>
+</body>
+</html>
